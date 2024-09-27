@@ -1,0 +1,22 @@
+def extrair(linha):
+
+    digitos = [char for char in linha if char.isdigit()]
+
+    if not digitos:
+        return 0
+
+    if len(digitos) == 1:
+        num = int(digitos[0] * 2)
+    else:
+        num = int(digitos[0] + digitos[-1])
+
+    return num
+
+calibration_data = [
+]
+
+numeros = [extrair(linha) for linha in calibration_data]
+
+soma_total = sum(numeros)
+
+print("A soma dos números é:", soma_total)
