@@ -16,10 +16,10 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
 
-        Path path = Paths.get("src/new_calibration_text.txt").toAbsolutePath();
+        Path path = Paths.get("gustavo/src/new_calibration_text.txt").toAbsolutePath();
         List<String> calibrations = Files.readAllLines(path);
 
-        final int INTERVALO = Math.floorDiv(calibrations.size(), 8);
+        final int INTERVALO = Math.floorDiv(calibrations.size(), TOTAL_THREADS);
 
         long tempoInicial = System.currentTimeMillis();
         try (ExecutorService executor = Executors.newFixedThreadPool(TOTAL_THREADS)) {
